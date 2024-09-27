@@ -1,4 +1,5 @@
 using System;
+using System.Data;
 using System.Threading.Channels;
 
 namespace EnkelKalkylator
@@ -17,12 +18,13 @@ namespace EnkelKalkylator
             tal1 = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("Ange tal 2");
             tal2 = Convert.ToDouble(Console.ReadLine());
-
+            return;
         }
-        public void Substract(double tal1, double tal2) 
+        //Metod för att subtrahera två tal som skriver ut resultat till användare
+        public void Substract(double sub1, double sub2) 
         {
-           Resultat = tal1 - tal2;
-            Console.WriteLine($"Summan är {Resultat}");
+            Resultat = sub1 - sub2;
+            Console.WriteLine($"{sub1} - {sub2} = {Resultat}");
 
         }
         public void Addition(double tal1,double tal2)
@@ -31,8 +33,11 @@ namespace EnkelKalkylator
             Resultat = tal1 + tal2;
             Console.WriteLine($"Summan är {Resultat}");
         }
-
-
-
+        //Metod för att multiplicera två tal som skriver ut resultat till användare
+        internal void Multiplicate(double mul1, double mul2)
+        {
+            Resultat = mul1 * mul2;
+            Console.WriteLine($"{mul1} * {mul2} = {Resultat}");
+        }
     }//class calc end
 }
