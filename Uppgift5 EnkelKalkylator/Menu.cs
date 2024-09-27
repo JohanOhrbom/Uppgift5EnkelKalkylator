@@ -12,6 +12,7 @@ namespace EnkelKalkylator
 
         internal void MainMenu()
         {
+            var calculator = new Calculator();
 
             while (true)
             {
