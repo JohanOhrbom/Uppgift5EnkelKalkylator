@@ -2,13 +2,11 @@
 namespace EnkelKalkylator
 {
     internal class Calculator
+
     {
 
-        public Calculator()
-        {
+    {//Internal class Calc
+        public double Tal1 {  get; set; }
+        public double Tal2 { get; set; }
 
-
-        }
-        
-    }
 }
