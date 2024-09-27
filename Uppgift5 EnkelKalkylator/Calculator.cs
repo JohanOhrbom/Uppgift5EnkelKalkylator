@@ -1,10 +1,11 @@
-﻿
 using System;
+using System.Threading.Channels;
 
 namespace EnkelKalkylator
 { 
     
     internal class Calculator
+
     {//class calc
         public double Tal1 { get; set; }
         public double Tal2 { get; set; }
@@ -14,10 +15,16 @@ namespace EnkelKalkylator
         {
             Console.WriteLine("Ange tal 1");
             tal1 = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Angel tal 2");
+            Console.WriteLine("Ange tal 2");
             tal2 = Convert.ToDouble(Console.ReadLine());
-        }
 
+        }
+        public void Substract(double tal1, double tal2) 
+        {
+           Resultat = tal1 - tal2;
+            Console.WriteLine($"Summan är {Resultat}");
+
+        }
         public void Addition(double tal1,double tal2)
         {
 
