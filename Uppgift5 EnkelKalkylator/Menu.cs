@@ -38,7 +38,12 @@ namespace EnkelKalkylator
                         break;
                     case ConsoleKey.Escape:
                         Console.WriteLine("Du har valt att avsluta programmet");
+                        Environment.Exit(0);
                         break;
+                    default:
+                        Console.WriteLine("Fel format vänligen ange ett val ur menyn");
+                        break;
+
 
                 
                 }
