@@ -5,12 +5,16 @@ namespace EnkelKalkylator
 {
     public class Menu
     {
+
         public Menu()
         {
         }
 
         internal void MainMenu()
         {
+            var calculator = new Calculator();
+            
+
             while (true)
             {
                 Console.WriteLine(" ---- Miniräknare ---- \n" +
@@ -25,10 +29,16 @@ namespace EnkelKalkylator
                 {
                     case ConsoleKey.D1:
                         Console.WriteLine("Du har valt Addition");
-                        
+                       
+
+
+
                         break;
                     case ConsoleKey.D2:
-                        Console.WriteLine("Du har valt Substration");
+                        //Mata in tal ()
+                        calculator.UserInput(out double tal1, out double tal2);
+
+                        calculator.Substract(tal1, tal2);
                         break;
                     case ConsoleKey.D3:
                         Console.WriteLine("Du har valt Division");
@@ -38,11 +48,19 @@ namespace EnkelKalkylator
                         break;
                     case ConsoleKey.Escape:
                         Console.WriteLine("Du har valt att avsluta programmet");
+                        Environment.Exit(0);
                         break;
+                    default:
+                        Console.WriteLine("Fel format vänligen ange ett val ur menyn");
+                        break;
+
 
                 
                 }
+
             }
+
+
         }
     }
 }

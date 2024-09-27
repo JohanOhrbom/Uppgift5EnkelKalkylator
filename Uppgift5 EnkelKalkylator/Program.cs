@@ -36,7 +36,7 @@
 
             //Console.WriteLine($"Resultat: {result}");
             //Console.ReadKey();
-            var calculator = new Calculator();
+            
             var menu = new Menu();
             menu.MainMenu();
         }
