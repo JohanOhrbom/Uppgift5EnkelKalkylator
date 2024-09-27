@@ -1,12 +1,12 @@
-﻿using System;
+using System;
 using System.Threading.Channels;
 
 namespace EnkelKalkylator
-{
+{ 
+    
     internal class Calculator
-    {
 
-        //Internal class Calc
+    {//class calc
         public double Tal1 { get; set; }
         public double Tal2 { get; set; }
         public double Resultat { get; set; }
@@ -25,8 +25,14 @@ namespace EnkelKalkylator
             Console.WriteLine($"Summan är {Resultat}");
 
         }
+        public void Addition(double tal1,double tal2)
+        {
 
-    }
-    
+            Resultat = tal1 + tal2;
+            Console.WriteLine($"Summan är {Resultat}");
+        }
 
+
+
+    }//class calc end
 }
