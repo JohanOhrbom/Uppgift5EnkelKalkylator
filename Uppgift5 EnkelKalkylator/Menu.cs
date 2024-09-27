@@ -11,6 +11,7 @@ namespace EnkelKalkylator
 
         internal void MainMenu()
         {
+            
             while (true)
             {
                 Console.WriteLine(" ---- Miniräknare ---- \n" +
