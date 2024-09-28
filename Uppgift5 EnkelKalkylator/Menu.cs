@@ -22,6 +22,7 @@ namespace EnkelKalkylator
                 "\n\t2. Subtrahera" +
                 "\n\t3. Dividera" +
                 "\n\t4. Multiplicera" +
+                "\n\t5. Upphöjt till" +
                 "\n\tEsc. Avsluta programmet");
 
                 //Switch med readkey för enklare användning + Felhantering med default
@@ -51,6 +52,12 @@ namespace EnkelKalkylator
                     case ConsoleKey.D4:
                         calculator.UserInput(out double mul1, out double mul2);
                         calculator.Multiplicate(mul1, mul2);
+                        break;
+
+                    //Anropar metod för input och upphöjt till
+                    case ConsoleKey.D5:
+                        calculator.UserInput(out double po1, out double po2);
+                        calculator.PowerOf(po1, po2);
                         break;
 
                     //Avslutar whileloopen och programmet
