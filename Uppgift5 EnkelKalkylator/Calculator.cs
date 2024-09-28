@@ -27,6 +27,7 @@ namespace EnkelKalkylator
             Console.WriteLine($"{sub1} - {sub2} = {Resultat}");
 
         }
+        //Metod för att addera två tal som skriver ut resultat till användare
         public void Addition(double tal1,double tal2)
         {
 
@@ -38,6 +39,13 @@ namespace EnkelKalkylator
         {
             Resultat = mul1 * mul2;
             Console.WriteLine($"{mul1} * {mul2} = {Resultat}");
+        }
+        //Metod för att dividera två tal som skriver ut resultat till användare
+        public void Divide(double div1, double div2)
+        {
+
+            Resultat = div1 / div2;
+            Console.WriteLine($"{div1} / {div2} = {Resultat}");
         }
     }//class calc end
 }
