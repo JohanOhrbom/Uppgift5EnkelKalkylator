@@ -23,6 +23,7 @@ namespace EnkelKalkylator
                 "\n\t3. Dividera" +
                 "\n\t4. Multiplicera" +
                 "\n\t5. Upphöjt till" +
+                "\n\t6. Roten ur" +
                 "\n\tEsc. Avsluta programmet");
 
                 //Switch med readkey för enklare användning + Felhantering med default
@@ -31,33 +32,38 @@ namespace EnkelKalkylator
                     
                     //Anropar metod för input och addition
                     case ConsoleKey.D1:
-                        calculator.UserInput(out double add1, out double add2);
+                        calculator.UserInputTwoValues(out double add1, out double add2);
                         calculator.Addition(add1, add2);
                         break;
                     
                     //Anropar metod för input och substation
                     case ConsoleKey.D2:
                         
-                        calculator.UserInput(out double sub1, out double sub2);
+                        calculator.UserInputTwoValues(out double sub1, out double sub2);
                         calculator.Substract(sub1, sub2);
                         break;
 
                     //Anropar metod för input och substation
                     case ConsoleKey.D3:
-                        calculator.UserInput(out double div1, out double div2);
+                        calculator.UserInputTwoValues(out double div1, out double div2);
                         calculator.Divide(div1, div2);
                         break;
 
                     //Anropar metod för input och multiplikation
                     case ConsoleKey.D4:
-                        calculator.UserInput(out double mul1, out double mul2);
+                        calculator.UserInputTwoValues(out double mul1, out double mul2);
                         calculator.Multiplicate(mul1, mul2);
                         break;
 
                     //Anropar metod för input och upphöjt till
                     case ConsoleKey.D5:
-                        calculator.UserInput(out double po1, out double po2);
+                        calculator.UserInputTwoValues(out double po1, out double po2);
                         calculator.PowerOf(po1, po2);
+                        break;
+                    //Anropar metod för input och upphöjt till
+                    case ConsoleKey.D6:
+                        calculator.UserInputOneValue(out double squ1);
+                        calculator.SquareRoot(squ1);
                         break;
 
                     //Avslutar whileloopen och programmet
