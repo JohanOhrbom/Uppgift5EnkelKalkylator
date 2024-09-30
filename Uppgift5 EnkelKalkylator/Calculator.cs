@@ -1,36 +1,51 @@
-using System;
-using System.Data;
-using System.Threading.Channels;
-
 namespace EnkelKalkylator
-{ 
-    
+{
+
     internal class Calculator
 
     {//class calc
-        public double Tal1 { get; set; }
-        public double Tal2 { get; set; }
         public double Resultat { get; set; }
 
-        public void UserInput(out double tal1, out double tal2)
+        //Metod för att ta in data för ett tal
+        public void UserInputOneValue(out double tal1)
         {
-            
-            Console.WriteLine("Ange tal 1");
-            tal1 = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Ange tal 2");
-            tal2 = Convert.ToDouble(Console.ReadLine());
-            return;
-
+            tal1 = GetValidInput("Ange ett tal: ");
         }
+
+        //Metod för att ta in data för två tal
+        public void UserInputTwoValues(out double tal1, out double tal2)
+        {
+            tal1 = GetValidInput("Ange ett tal: ");
+            tal2 = GetValidInput("Ange ett andra tal: ");
+        }
+        //Felhantering så att input från användare har rätt format
+        private double GetValidInput(string prompt)
+        {
+            double result;
+
+            while (true)
+            {
+                Console.Write(prompt);
+                if (double.TryParse(Console.ReadLine(), out result))
+                {
+                    return result;
+                }
+                else
+                {
+                    Console.WriteLine("Ogiltigt format, vänligen ange ett tal.");
+                }
+            }
+        }
+       
         //Metod för att subtrahera två tal som skriver ut resultat till användare
-        public void Substract(double sub1, double sub2) 
+        public void Substract(double sub1, double sub2)
         {
             Resultat = sub1 - sub2;
             Console.WriteLine($"{sub1} - {sub2} = {Resultat}");
 
         }
         //Metod för att addera två tal som skriver ut resultat till användare
-        public void Addition(double tal1,double tal2)
+        public void Addition(double tal1, double tal2)
         {
 
             Resultat = tal1 + tal2;
@@ -55,6 +70,12 @@ namespace EnkelKalkylator
             Resultat = Math.Pow(po1, po2);
             Console.WriteLine($"{po1} ^ {po2} = {Resultat}");
 
+        }
+        //Metod för att kolla roten ur ett tal och skriver ut resultat till användare
+        internal void SquareRoot(double squ1)
+        {
+            Resultat = Math.Sqrt(squ1);
+            Console.WriteLine($"Roten ur {squ1} är: {Resultat}");
         }
     }//class calc end
 }
