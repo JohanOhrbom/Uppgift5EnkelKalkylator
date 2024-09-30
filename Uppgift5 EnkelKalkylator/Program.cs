@@ -2,8 +2,10 @@
 {
     class Program
     {
+
         static void Main(string[] args)
         {
+
             //Console.WriteLine("Enkel Kalkylator");
             //Console.WriteLine("Ange operation (+, -, *, /): ");
             //char operation = Console.ReadKey().KeyChar;
@@ -34,8 +36,9 @@
 
             //Console.WriteLine($"Resultat: {result}");
             //Console.ReadKey();
-            var calculator = new Calculator();
-            calculator.Run();
+            
+            var menu = new Menu();
+            menu.MainMenu();
         }
     }
 }
